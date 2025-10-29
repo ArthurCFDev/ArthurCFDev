@@ -2,12 +2,15 @@ name: Atualizar README automaticamente
 
 on:
   schedule:
-    - cron: "0 */12 * * *"
-  workflow_dispatch:
+    - cron: "0 */12 * * *"  # executa a cada 12 horas
+  workflow_dispatch:         # permite rodar manualmente
 
 jobs:
   update-readme:
     runs-on: ubuntu-latest
+
+    env:
+      GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}   # ✅ aqui vai o token que você criou
 
     steps:
       - name: Clonar repositório
@@ -16,22 +19,18 @@ jobs:
       - name: Configurar Node.js
         uses: actions/setup-node@v3
         with:
-          node-version: "18"
+          node-version: "20"
 
-      - name: Atualizar Skills automaticamente
+      - name: Instalar dependências
+        run: npm install axios
+
+      - name: Atualizar README
+        run: node update_skills.js
+
+      - name: Commit e push das alterações
         run: |
-          npm init -y
-          node update_skills.js
-
-      - name: Atualizar atividades recentes
-        uses: JamesIves/github-activity-readme@v0.3.0
-        with:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-
-      - name: Commit e Push
-        run: |
-          git config --global user.email "bot@github.com"
-          git config --global user.name "GitHub Action"
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add .
-          git commit -m "Atualizar README automaticamente" || echo "Sem mudanças"
+          git commit -m "Atualiza README automaticamente"
           git push
