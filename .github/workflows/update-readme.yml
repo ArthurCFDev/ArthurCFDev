@@ -2,7 +2,7 @@ name: Atualizar README automaticamente
 
 on:
   schedule:
-    - cron: "0 */12 * * *"  # a cada 12 horas
+    - cron: "0 */12 * * *"
   workflow_dispatch:
 
 jobs:
@@ -12,6 +12,16 @@ jobs:
     steps:
       - name: Clonar repositório
         uses: actions/checkout@v3
+
+      - name: Configurar Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: "18"
+
+      - name: Atualizar Skills automaticamente
+        run: |
+          npm init -y
+          node update_skills.js
 
       - name: Atualizar atividades recentes
         uses: JamesIves/github-activity-readme@v0.3.0
