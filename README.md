@@ -1,10 +1,21 @@
-Hello, im Arthur
-I have a great interest in technology and I am training to become a FullStack Developer.
-HTML, CSS, JS, Python, SQL, C++
+# 👋 Olá! Eu sou o Arthur Costa  
 
-email> artcostafranca@gmail.com
+💻 Estudante e desenvolvedor apaixonado por tecnologia.  
+📚 Aprendendo e criando projetos em C#, Node.js e Python.  
 
-<!---
-ArthurCFDev/ArthurCFDev is a ✨ special ✨ repository because its `README.md` (this file) appears on your GitHub profile.
-You can click the Preview link to take a look at your changes.
---->
+---
+
+### 🧠 Minhas Skills
+<!--START_SECTION:skills-->
+<!--END_SECTION:skills-->
+
+### 📊 Estatísticas do GitHub
+![Arthur's GitHub Stats](https://github-readme-stats.vercel.app/api?username=ArthurCosta&show_icons=true&theme=dracula)
+
+![Top Langs](https://github-readme-stats.vercel.app/api/top-langs/?username=ArthurCosta&layout=compact&theme=dracula)
+
+---
+
+### 🔄 Últimas atualizações
+<!--START_SECTION:activity-->
+<!--END_SECTION:activity-->
