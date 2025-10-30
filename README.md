@@ -7,6 +7,7 @@
 
 ### 🧠 Skills Principais
 <!--START_SECTION:skills-->
+
 <!--END_SECTION:skills-->
 
 
